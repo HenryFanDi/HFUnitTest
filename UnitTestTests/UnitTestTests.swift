@@ -11,8 +11,11 @@ import XCTest
 
 class UnitTestTests: XCTestCase {
   
+  var vc: MainViewController!
+  
   override func setUp() {
     super.setUp()
+    vc = MainViewController()
   }
   
   override func tearDown() {
@@ -21,6 +24,11 @@ class UnitTestTests: XCTestCase {
   
   func testUnitTest() {
     XCTAssert(true)
+  }
+  
+  func testMainViewController() {
+    let sum = vc.sum(5, b: 5)
+    XCTAssert(sum == 10)
   }
   
   func testExample() {
