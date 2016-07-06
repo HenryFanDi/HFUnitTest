@@ -27,8 +27,17 @@ class UnitTestTests: XCTestCase {
   }
   
   func testMainViewController() {
-    let sum = vc.sum(5, b: 5)
+    let _ = vc.view
+    let num1 = 5
+    let num2 = 5
+    let sum = vc.sum(num1, b: num2)
+    
+    vc.num1TextField.text = String(format: "%d", num1)
+    vc.num2TextField.text = String(format: "%d", num2)
+    vc.calculateBtnOnTap(vc.calculateBtn)
+    
     XCTAssert(sum == 10)
+    XCTAssert(vc.resultLabel.text == String(format: "%d", sum), "fail to get sum of result label")
   }
   
   func testExample() {
