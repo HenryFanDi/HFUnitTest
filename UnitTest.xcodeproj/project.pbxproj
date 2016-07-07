@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D8031A7D1D2941060043DFFF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8031A7B1D2941060043DFFF /* MainViewController.swift */; };
 		D8031A7E1D2941060043DFFF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8031A7C1D2941060043DFFF /* MainViewController.xib */; };
+		D86D63791D2E975A0004EE79 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D63781D2E975A0004EE79 /* ProfileViewModel.swift */; };
+		D86D637B1D2E97E60004EE79 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86D637A1D2E97E60004EE79 /* Profile.swift */; };
 		D8B31EEB1D27F509007998F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31EEA1D27F509007998F9 /* AppDelegate.swift */; };
 		D8B31EF31D27F509007998F9 /* UnitTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B31EF11D27F509007998F9 /* UnitTest.xcdatamodeld */; };
 		D8B31EF51D27F509007998F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B31EF41D27F509007998F9 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		D8031A7B1D2941060043DFFF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D8031A7C1D2941060043DFFF /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		D86D63781D2E975A0004EE79 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		D86D637A1D2E97E60004EE79 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		D8B31EE71D27F509007998F9 /* UnitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B31EEA1D27F509007998F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B31EF21D27F509007998F9 /* UnitTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UnitTest.xcdatamodel; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				D8B31EEA1D27F509007998F9 /* AppDelegate.swift */,
 				D8031A7B1D2941060043DFFF /* MainViewController.swift */,
 				D8031A7C1D2941060043DFFF /* MainViewController.xib */,
+				D86D637A1D2E97E60004EE79 /* Profile.swift */,
+				D86D63781D2E975A0004EE79 /* ProfileViewModel.swift */,
 				D8B31EF41D27F509007998F9 /* Assets.xcassets */,
 				D8B31EF61D27F509007998F9 /* LaunchScreen.storyboard */,
 				D8B31EF91D27F509007998F9 /* Info.plist */,
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B31EF31D27F509007998F9 /* UnitTest.xcdatamodeld in Sources */,
+				D86D637B1D2E97E60004EE79 /* Profile.swift in Sources */,
 				D8B31EEB1D27F509007998F9 /* AppDelegate.swift in Sources */,
+				D86D63791D2E975A0004EE79 /* ProfileViewModel.swift in Sources */,
 				D8031A7D1D2941060043DFFF /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

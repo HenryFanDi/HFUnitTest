@@ -40,6 +40,14 @@ class UnitTestTests: XCTestCase {
     XCTAssert(vc.resultLabel.text == String(format: "%d", sum), "fail to get sum of result label")
   }
   
+  func testInitialize() {
+    let profile = Profile()
+    let profileViewModel = ProfileViewModel.init(withProfile: profile)
+    
+    XCTAssertNotNil(profileViewModel, "ProfileViewModel should not be nil.")
+    XCTAssertTrue(profileViewModel.profile == profile, "ProfileViewModel's profile should be equal to profile.")
+  }
+  
   func testExample() {
   }
   
