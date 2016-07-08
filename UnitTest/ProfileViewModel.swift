@@ -18,4 +18,8 @@ class ProfileViewModel: NSObject {
     self.profile = profile
   }
   
+  func timeForProfile() -> String {
+    return profile.duration.toString()
+  }
+  
 }

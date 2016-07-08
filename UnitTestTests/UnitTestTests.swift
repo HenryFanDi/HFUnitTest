@@ -37,7 +37,7 @@ class UnitTestTests: XCTestCase {
     vc.calculateBtnOnTap(vc.calculateBtn)
     
     XCTAssert(sum == 10)
-    XCTAssert(vc.resultLabel.text == String(format: "%d", sum), "fail to get sum of result label")
+    XCTAssert(vc.resultLabel.text == String(format: "%d", sum), "fail to get sum of result label.")
   }
   
   func testInitialize() {
@@ -46,6 +46,15 @@ class UnitTestTests: XCTestCase {
     
     XCTAssertNotNil(profileViewModel, "ProfileViewModel should not be nil.")
     XCTAssertTrue(profileViewModel.profile == profile, "ProfileViewModel's profile should be equal to profile.")
+  }
+  
+  func testTimeForProfile() {
+    let profile = Profile()
+    profile.duration = 645.0
+    
+    let profileViewModel = ProfileViewModel.init(withProfile: profile)
+    let timeForProfile = profileViewModel.timeForProfile()
+    XCTAssertEqual(timeForProfile, "10:45", "The formatted time should be equal to 10:45.")
   }
   
   func testExample() {
