@@ -11,11 +11,13 @@ import UIKit
 class Profile: NSObject {
   
   var name: String
+  var duration: NSTimeInterval
   
   // MARK: Initialize
   
   override init() {
     self.name = "Profile"
+    self.duration = 450.0
   }
   
 }
