@@ -48,6 +48,12 @@ class UnitTestTests: XCTestCase {
     XCTAssertTrue(profileViewModel.profile == profile, "ProfileViewModel's profile should be equal to profile.")
   }
   
+  func testProfile() {
+    let profile = Profile()
+    
+    XCTAssert(profile.name == "Profile", "Profile name should be the same.")
+  }
+  
   func testTimeForProfile() {
     let profile = Profile()
     profile.duration = 645.0
