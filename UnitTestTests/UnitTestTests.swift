@@ -52,6 +52,7 @@ class UnitTestTests: XCTestCase {
     let profile = Profile()
     
     XCTAssert(profile.name == "Profile", "Profile name should be the same.")
+    XCTAssertEqual(profile.married, true)
   }
   
   func testTimeForProfile() {
