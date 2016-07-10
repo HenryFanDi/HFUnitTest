@@ -12,12 +12,14 @@ class Profile: NSObject {
   
   var name: String
   var duration: NSTimeInterval
+  var married: Bool
   
   // MARK: Initialize
   
   override init() {
     self.name = "Profile"
     self.duration = 450.0
+    self.married = true
   }
   
 }
