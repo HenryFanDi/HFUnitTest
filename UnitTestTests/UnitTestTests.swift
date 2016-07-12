@@ -64,6 +64,14 @@ class UnitTestTests: XCTestCase {
     XCTAssertEqual(timeForProfile, "10:45", "The formatted time should be equal to 10:45.")
   }
   
+  func testAddOrUpdateQueryStringParameter() {
+    let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
+    
+    let newValue = APIHelper.shared.addOrUpdateQueryStringParameter(url, key: "aBc", value: "5566")
+    let expectedValue = "https://example.com?aBc=5566&lmn=tuv&xyz=987"
+    XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
+  }
+  
   func testExample() {
   }
   

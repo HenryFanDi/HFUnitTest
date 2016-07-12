@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupCalculateBtn()
+    
+    APIHelper.shared.addOrUpdateQueryStringParameter("https://example.com?abc=123&lmn=tuv&xyz=987", key: "aBc", value: "555")
   }
   
   override func didReceiveMemoryWarning() {
