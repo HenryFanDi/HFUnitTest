@@ -72,6 +72,14 @@ class UnitTestTests: XCTestCase {
     XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
   }
   
+  func testRemoveQueryStringParameter() {
+    let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
+    
+    let newValue = APIHelper.shared.removeQueryStringParameter(url, key: "xyz")
+    let expectedValue = "https://example.com?abc=123&lmn=tuv"
+    XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
+  }
+  
   func testExample() {
   }
   
