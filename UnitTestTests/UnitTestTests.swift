@@ -80,6 +80,15 @@ class UnitTestTests: XCTestCase {
     XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
   }
   
+  func testAddOrUpdateQueryStringParameterForAdd() {
+    let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
+    
+    let newValue = APIHelper.shared.addOrUpdateQueryStringParameter(url, key: "def", value: "456")
+    let expectedValue = "https://example.com?abc=123&lmn=tuv&xyz=987&def=456"
+    
+    XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
+  }
+
   func testExample() {
   }
   
