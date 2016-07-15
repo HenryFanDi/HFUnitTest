@@ -26,6 +26,8 @@ class UnitTestTests: XCTestCase {
     XCTAssert(true)
   }
   
+  // MARK: ViewController
+  
   func testMainViewController() {
     let _ = vc.view
     let num1 = 5
@@ -39,6 +41,8 @@ class UnitTestTests: XCTestCase {
     XCTAssert(sum == 10)
     XCTAssert(vc.resultLabel.text == String(format: "%d", sum), "fail to get sum of result label.")
   }
+  
+  // MARK: Model
   
   func testInitialize() {
     let profile = Profile()
@@ -63,6 +67,8 @@ class UnitTestTests: XCTestCase {
     let timeForProfile = profileViewModel.timeForProfile()
     XCTAssertEqual(timeForProfile, "10:45", "The formatted time should be equal to 10:45.")
   }
+  
+  // MARK: API
   
   func testAddOrUpdateQueryStringParameter() {
     let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
