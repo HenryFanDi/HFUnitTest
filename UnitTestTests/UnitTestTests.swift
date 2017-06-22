@@ -73,7 +73,7 @@ class UnitTestTests: XCTestCase {
   func testAddOrUpdateQueryStringParameter() {
     let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
     
-    let newValue = APIHelper.shared.addOrUpdateQueryStringParameter(url, key: "aBc", value: "5566")
+    let newValue = APIHelper.sharedInstance.addOrUpdateQueryStringParameter(url, key: "aBc", value: "5566")
     let expectedValue = "https://example.com?aBc=5566&lmn=tuv&xyz=987"
     XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
   }
@@ -81,7 +81,7 @@ class UnitTestTests: XCTestCase {
   func testRemoveQueryStringParameter() {
     let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
     
-    let newValue = APIHelper.shared.removeQueryStringParameter(url, key: "xyz")
+    let newValue = APIHelper.sharedInstance.removeQueryStringParameter(url, key: "xyz")
     let expectedValue = "https://example.com?abc=123&lmn=tuv"
     XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
   }
@@ -89,7 +89,7 @@ class UnitTestTests: XCTestCase {
   func testAddOrUpdateQueryStringParameterForAdd() {
     let url = "https://example.com?abc=123&lmn=tuv&xyz=987"
     
-    let newValue = APIHelper.shared.addOrUpdateQueryStringParameter(url, key: "def", value: "456")
+    let newValue = APIHelper.sharedInstance.addOrUpdateQueryStringParameter(url, key: "def", value: "456")
     let expectedValue = "https://example.com?abc=123&lmn=tuv&xyz=987&def=456"
     
     XCTAssertEqual(newValue, expectedValue, "The string should be \(expectedValue)")
@@ -99,7 +99,7 @@ class UnitTestTests: XCTestCase {
   }
   
   func testPerformanceExample() {
-    self.measureBlock {
+    self.measure {
     }
   }
   

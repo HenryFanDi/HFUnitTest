@@ -11,7 +11,7 @@ import UIKit
 class Profile: NSObject {
   
   var name: String
-  var duration: NSTimeInterval
+  var duration: TimeInterval
   var married: Bool
   
   // MARK: Initialize

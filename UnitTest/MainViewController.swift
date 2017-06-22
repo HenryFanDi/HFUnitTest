@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     setupCalculateBtn()
     
-    APIHelper.shared.addOrUpdateQueryStringParameter("https://example.com?abc=123&lmn=tuv&xyz=987", key: "aBc", value: "555")
+    print(APIHelper.sharedInstance.addOrUpdateQueryStringParameter("https://example.com?abc=123&lmn=tuv&xyz=987", key: "aBc", value: "555"))
   }
   
   override func didReceiveMemoryWarning() {
@@ -35,12 +35,12 @@ class MainViewController: UIViewController {
   // MARK: Private
   
   func setupCalculateBtn() {
-    calculateBtn.layer.borderColor = UIColor.whiteColor().CGColor
+    calculateBtn.layer.borderColor = UIColor.white.cgColor
     calculateBtn.layer.borderWidth = 1.0
     calculateBtn.layer.cornerRadius = 4.0
   }
   
-  @IBAction func calculateBtnOnTap(sender: AnyObject) {
+  @IBAction func calculateBtnOnTap(_ sender: AnyObject) {
     if num1TextField.text != "" && num2TextField.text != "" {
       let s = sum(Int(num1TextField.text!)!, b: Int(num2TextField.text!)!)
       resultLabel.text = String(format: "%d", s)
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
   
   // MARK: Public
   
-  func sum(a: Int, b: Int) -> Int {
+  func sum(_ a: Int, b: Int) -> Int {
     return a + b
   }
   

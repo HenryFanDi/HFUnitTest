@@ -10,35 +10,29 @@ import UIKit
 
 class APIHelper: NSObject {
   
-  // MARK: Singleton Pattern
+  // MARK: - Singleton Pattern
   
-  class var shared: APIHelper {
-    struct Static {
-      static var instance: APIHelper?
-      static var token: dispatch_once_t = 0
-    }
-    dispatch_once(&Static.token) {
-      Static.instance = APIHelper()
-    }
-    return Static.instance!
-  }
-
-  func addOrUpdateQueryStringParameter(url: String, key: String, value: String?) -> String {
-    if let components = NSURLComponents.init(string: url), var queryItems: [NSURLQueryItem] = (components.queryItems ?? []) {
-      for (index, item) in queryItems.enumerate() {
+  static let sharedInstance = APIHelper()
+  
+  // MARK: - Public
+  
+  func addOrUpdateQueryStringParameter(_ url: String, key: String, value: String?) -> String {
+    if var components = URLComponents.init(string: url) {
+      var queryItems = components.queryItems ?? []
+      for (index, item) in queryItems.enumerated() {
         print(item)
-        if item.name.lowercaseString == key.lowercaseString {
+        if item.name.lowercased() == key.lowercased() {
           if let v = value { // Update
-            queryItems[index] = NSURLQueryItem(name: key, value: v)
+            queryItems[index] = URLQueryItem(name: key, value: v)
           } else { // Delete
-            queryItems.removeAtIndex(index)
+            queryItems.remove(at: index)
           }
           components.queryItems = queryItems.count > 0 ? queryItems : nil
           return components.string!
         }
       }
       if let v = value { // Add
-        queryItems.append(NSURLQueryItem(name: key, value: v))
+        queryItems.append(URLQueryItem(name: key, value: v))
         components.queryItems = queryItems
         return components.string!
       }
@@ -46,7 +40,7 @@ class APIHelper: NSObject {
     return url
   }
   
-  func removeQueryStringParameter(url: String, key: String) -> String {
+  func removeQueryStringParameter(_ url: String, key: String) -> String {
     return addOrUpdateQueryStringParameter(url, key: key, value: nil)
   }
   
